@@ -18,6 +18,7 @@ export default {
         'app-grey': '#83888F',
         'grey': '#83888F',
         '2C343E': '#2C343E',
+        'app-off-white': '#F4F1EB'
       },
     },
   },

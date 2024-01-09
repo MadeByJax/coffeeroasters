@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isClosed, setIsClosed] = useState(true);
 
   return (
-    <div className="flex justify-between items-center container mx-auto px-6 py-8">
+    <div className="flex justify-between items-center  py-8">
       <img className="w-[163px] h-[18px]" src={Logo} alt="" />
       <img
         onClick={() => {

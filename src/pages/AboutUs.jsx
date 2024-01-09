@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Commitment from "../components/Commitment";
 import UncompromisingQuality from "../components/UncompromisingQuality";
 import Locations from "../components/Locations";
+import Footer from "../components/Footer";
 
 const AboutUs = () => {
   return (
@@ -13,6 +14,7 @@ const AboutUs = () => {
       <Commitment />
       <UncompromisingQuality />
       <Locations />
+      <Footer />
     </div>
   );
 };

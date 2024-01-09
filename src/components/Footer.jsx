@@ -6,7 +6,7 @@ import Instagram from "/src/assets/shared/desktop/icon-instagram.svg";
 
 const Footer = () => {
   return (
-    <div className="px-6 container  mt-36 mx-auto">
+    <div className="mx-auto">
       <div className="bg-2C343E p-14 flex flex-col lg:flex-row justify-center lg:justify-between items-center">
         <svg width="237" height="27" xmlns="http://www.w3.org/2000/svg">
           <g fill-rule="nonzero" fill="none">

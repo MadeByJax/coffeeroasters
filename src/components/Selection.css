@@ -5,3 +5,8 @@
 .background {
   background-color: red;
 }
+
+.unavailable {
+  text-decoration: line-through;
+  color: #999; /* You can adjust the color for better visibility */
+}

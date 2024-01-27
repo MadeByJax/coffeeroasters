@@ -4,6 +4,9 @@ import "./Selection.css";
 import OrderSummary from "./OrderSummary";
 import Modal from "./Modal";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Selection = () => {
   const QuestionCategories = [
     "Preferences",
@@ -13,6 +16,15 @@ const Selection = () => {
     "Deliveries",
   ];
 
+  const handleCheckout = () => {
+    if (calculatePrice() !== null) {
+      toast.success("Checkout successful!");
+      // Add any other logic for the checkout process here
+    }
+    if (calculatePrice() === null) {
+      toast.error("Please select all options before checkout");
+    }
+  };
   const CoffeeOptions = [
     {
       question: "How do you drink your coffee?",
@@ -159,6 +171,12 @@ const Selection = () => {
     setIsModalOpen((prev) => !prev);
   };
 
+  const validateCheckout = () => {
+    if (calculatePrice() !== null) {
+      handleModal();
+    }
+  };
+
   const calculatePrice = () => {
     const weightOption = selectedOptions[2];
     const deliveryOption = selectedOptions[4];
@@ -231,101 +249,109 @@ const Selection = () => {
   }, []);
 
   return (
-    <div className="flex flex-col xl:flex-row justify-between ">
-      <ul className="hidden font-bold text-[24px] xl:flex flex-col gap-[24px]">
-        {QuestionCategories.map((category, index) => (
-          <a href={`#${category}`}>
-            <li
-              key={index}
-              className={
-                category === selectedCategory ? "text-black" : "text-gray-500"
-              }
-              onClick={() => setSelectedCategory(category)}
-            >
-              <h3 className="mb-[24px]">
-                <span>{String(index + 1).padStart(2, "0")}</span> {category}
-              </h3>
-              <div className="h-[1px] w-full bg-black"></div>
-            </li>
-          </a>
-        ))}
-      </ul>
-      <div className="flex flex-col gap-[96px] max-w-[600px]">
-        {CoffeeOptions.map((questionObj, categoryIndex) => (
-          <div
-            id={QuestionCategories[categoryIndex]}
-            key={questionObj.question}
-            className={`fade-in ${
-              visibleOptions[categoryIndex] ? "visible" : ""
-            }`}
-          >
-            <div className="flex items-center justify-between">
-              <h2
-                className={`text-app-grey text-[24px] lg:text-[40px] font-bold ${
-                  isCapsuleSelected && categoryIndex === 3 ? "unavailable" : ""
-                }`}
+    <>
+      <div className="flex flex-col xl:flex-row justify-between ">
+        <ul className="hidden font-bold text-[24px] xl:flex flex-col gap-[24px]">
+          {QuestionCategories.map((category, index) => (
+            <a href={`#${category}`}>
+              <li
+                key={index}
+                className={
+                  category === selectedCategory ? "text-black" : "text-gray-500"
+                }
+                onClick={() => setSelectedCategory(category)}
               >
-                {questionObj.question}
-              </h2>
-
-              {categoryIndex !== 3 && (
-                <img
-                  className={`w-[18px] h-[12px] transform ${
-                    visibleOptions[categoryIndex] ? "rotate-180" : "rotate-0"
+                <h3 className="mb-[24px]">
+                  <span>{String(index + 1).padStart(2, "0")}</span> {category}
+                </h3>
+                <div className="h-[1px] w-full bg-black"></div>
+              </li>
+            </a>
+          ))}
+        </ul>
+        <div className="flex flex-col gap-[96px] max-w-[600px]">
+          {CoffeeOptions.map((questionObj, categoryIndex) => (
+            <div
+              id={QuestionCategories[categoryIndex]}
+              key={questionObj.question}
+              className={`fade-in ${
+                visibleOptions[categoryIndex] ? "visible" : ""
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <h2
+                  className={`text-app-grey text-[24px] lg:text-[40px] font-bold ${
+                    isCapsuleSelected && categoryIndex === 3
+                      ? "unavailable"
+                      : ""
                   }`}
-                  onClick={() => toggleOptions(categoryIndex)}
-                  src={Arrow}
-                  alt=""
-                />
-              )}
+                >
+                  {questionObj.question}
+                </h2>
 
-              {categoryIndex === 3 && !isCapsuleSelected && (
-                <img
-                  className={`w-[18px] h-[12px] transform ${
-                    visibleOptions[categoryIndex] ? "rotate-180" : "rotate-0"
-                  }`}
-                  onClick={() => toggleOptions(categoryIndex)}
-                  src={Arrow}
-                  alt=""
-                />
+                {categoryIndex !== 3 && (
+                  <img
+                    className={`w-[18px] h-[12px] transform ${
+                      visibleOptions[categoryIndex] ? "rotate-180" : "rotate-0"
+                    }`}
+                    onClick={() => toggleOptions(categoryIndex)}
+                    src={Arrow}
+                    alt=""
+                  />
+                )}
+
+                {categoryIndex === 3 && !isCapsuleSelected && (
+                  <img
+                    className={`w-[18px] h-[12px] transform ${
+                      visibleOptions[categoryIndex] ? "rotate-180" : "rotate-0"
+                    }`}
+                    onClick={() => toggleOptions(categoryIndex)}
+                    src={Arrow}
+                    alt=""
+                  />
+                )}
+              </div>
+              {visibleOptions[categoryIndex] && (
+                <div className="mt-[32px] flex flex-col md:flex-row gap-[16px]">
+                  {questionObj.options.map((option) => (
+                    <div
+                      key={option.id}
+                      className={` cursor-pointer p-[24px] md:w-[228px] md:h-[250px] text-grey-blue ${
+                        selectedOptions[categoryIndex].id === option.id
+                          ? "bg-dark-cyan text-white"
+                          : "bg-app-off-white"
+                      }`}
+                      onClick={() => handleOptionSelect(categoryIndex, option)}
+                    >
+                      <h3 className="font-bold text-[24px]">{option.title}</h3>
+                      <p>{option.description}</p>
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
-            {visibleOptions[categoryIndex] && (
-              <div className="mt-[32px] flex flex-col md:flex-row gap-[16px]">
-                {questionObj.options.map((option) => (
-                  <div
-                    key={option.id}
-                    className={` cursor-pointer p-[24px] md:w-[228px] md:h-[250px] text-grey-blue ${
-                      selectedOptions[categoryIndex].id === option.id
-                        ? "bg-dark-cyan text-white"
-                        : "bg-app-off-white"
-                    }`}
-                    onClick={() => handleOptionSelect(categoryIndex, option)}
-                  >
-                    <h3 className="font-bold text-[24px]">{option.title}</h3>
-                    <p>{option.description}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-        <OrderSummary
-          selectedOptions={selectedOptions}
-          CoffeeOptions={CoffeeOptions}
-          handleModal={handleModal}
-          calculatePrice={calculatePrice}
-          isCapsuleSelected={isCapsuleSelected}
-        />
+          ))}
+          <OrderSummary
+            selectedOptions={selectedOptions}
+            CoffeeOptions={CoffeeOptions}
+            handleModal={handleModal}
+            calculatePrice={calculatePrice}
+            isCapsuleSelected={isCapsuleSelected}
+          />
+        </div>
+        {isModalOpen && (
+          <Modal
+            calculatePrice={calculatePrice}
+            selectedOptions={selectedOptions}
+            handleModal={handleModal}
+            isCapsuleSelected={isCapsuleSelected}
+            handleCheckout={handleCheckout}
+            validateCheckout={validateCheckout}
+          />
+        )}
       </div>
-      {isModalOpen && (
-        <Modal
-          calculatePrice={calculatePrice}
-          selectedOptions={selectedOptions}
-          handleModal={handleModal}
-        />
-      )}
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 

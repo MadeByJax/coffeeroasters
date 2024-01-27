@@ -1,7 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Modal = ({ handleModal, calculatePrice, selectedOptions }) => {
+const Modal = ({
+  handleModal,
+  calculatePrice,
+  selectedOptions,
+  isCapsuleSelected,
+  handleCheckout,
+  validateCheckout,
+}) => {
   return ReactDOM.createPortal(
     <div
       className=" fixed top-0 px-6 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50"
@@ -21,7 +28,11 @@ const Modal = ({ handleModal, calculatePrice, selectedOptions }) => {
             <span className="text-dark-cyan">{selectedOptions[1]?.title}</span>{" "}
             type of bean.{" "}
             <span className="text-dark-cyan">{selectedOptions[2]?.title}</span>,{" "}
-            <span className="text-dark-cyan">{selectedOptions[3]?.title}</span>,{" "}
+            {!isCapsuleSelected && (
+              <span className="text-dark-cyan">
+                {selectedOptions[3]?.title}
+              </span>
+            )}{" "}
             sent to me{" "}
             <span className="text-dark-cyan">{selectedOptions[4]?.title}</span>
             .”
@@ -33,13 +44,14 @@ const Modal = ({ handleModal, calculatePrice, selectedOptions }) => {
           </p>
           <div className="hidden lg:flex items-center justify-between gap-[13px] mt-[47px]">
             <p className="text-[32px] font-bold">
-              ${calculatePrice()}.00 / mo{" "}
+              ${calculatePrice()?.toFixed(2)} / mo{" "}
             </p>
             <button
               className="bg-dark-cyan  text-white px-[64px] py-[15px] rounded text-[18px] font-bold hover:bg-blue-700"
               onClick={(e) => {
                 e.stopPropagation();
-                handleModal();
+                validateCheckout();
+                handleCheckout();
               }}
             >
               Checkout

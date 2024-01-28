@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="px-6 mt-[120px] container relative mx-auto">
+    <div className=" relative">
       <div className="relative h-full">
         <div className="bg-2C343E h-3/5 lg:h-4/5 rounded-lg  absolute left-0 right-0"></div>
         <div className="px-6 pt-16 relative text-center text-light-cream">

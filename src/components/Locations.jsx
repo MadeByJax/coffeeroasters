@@ -5,7 +5,7 @@ import Australia from "/src/assets/about/desktop/illustration-australia.svg";
 
 const Locations = () => {
   return (
-    <div className="px-6 lg:px-20 container  mt-32 mx-auto">
+    <div className="">
       <h2 className="font-bold text-app-grey text-[24px] text-center md:text-left">
         Our headquarters
       </h2>

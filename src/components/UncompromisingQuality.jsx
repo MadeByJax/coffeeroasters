@@ -5,7 +5,7 @@ import desktopQuality from "/src/assets/about/desktop/image-quality.jpg";
 
 const UncompromisingQuality = () => {
   return (
-    <div className="container mx-auto px-6 mt-[198px] md:mt-[396px] lg:mt-[244px]">
+    <div className="">
       <div className="flex flex-col justify-center items-center lg:flex-row-reverse bg-2C343E rounded-[10px] px-6 md:px-12 pb-16 lg:py-[88px] gap-16">
         <img
           className="md:hidden h-full w-full object-cover object-center -mt-20 rounded-[8px]"

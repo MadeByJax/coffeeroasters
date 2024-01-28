@@ -4,7 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Subscribe from "./pages/Subscribe";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/subscribe" element={<Subscribe />} />
       </Routes>
+      <SpeedInsights />
     </BrowserRouter>
   );
 }

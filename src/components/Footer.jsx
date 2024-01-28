@@ -3,6 +3,7 @@ import Logo from "/src/assets/shared/desktop/logo.svg";
 import Facebook from "/src/assets/shared/desktop/icon-facebook.svg";
 import Twitter from "/src/assets/shared/desktop/icon-twitter.svg";
 import Instagram from "/src/assets/shared/desktop/icon-instagram.svg";
+import { Outlet, Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -22,9 +23,15 @@ const Footer = () => {
         </svg>
 
         <ul className="flex text-xs flex-col md:flex-row justify-center items-center text-app-grey mt-8 lg:mt-0 gap-8">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Create you plan</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About us</Link>
+          </li>
+          <li>
+            <Link to="/subscribe">Create your plan</Link>
+          </li>
         </ul>
         <div className="flex justify-center items-center mt-16 lg:mt-0 gap-8">
           <img src={Facebook} alt="" />

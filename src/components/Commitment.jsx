@@ -5,7 +5,7 @@ import tabletImage from "/src/assets/about/tablet/image-commitment.jpg";
 
 const Commitment = () => {
   return (
-    <div className="px-6 container mx-auto mt-[120px]">
+    <div className="">
       <div className="flex flex-col md:flex-row gap-12 lg:px-12 items-center">
         <div className="md:w-1/2">
           <img
@@ -19,7 +19,7 @@ const Commitment = () => {
             alt=""
           />
           <img
-            className="rounded-lg md:hidden w-full h-full"
+            className="rounded-lg md:hidden mx-auto object-cover object-center"
             src={mobileImage}
             alt=""
           />

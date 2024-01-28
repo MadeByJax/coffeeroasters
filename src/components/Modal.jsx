@@ -47,7 +47,7 @@ const Modal = ({
               ${calculatePrice()?.toFixed(2)} / mo{" "}
             </p>
             <button
-              className="bg-dark-cyan  text-white px-[64px] py-[15px] rounded text-[18px] font-bold hover:bg-blue-700"
+              className="bg-dark-cyan hover:bg-[#66D2CF]  text-white px-[64px] py-[15px] rounded text-[18px] font-bold "
               onClick={(e) => {
                 e.stopPropagation();
                 validateCheckout();
@@ -59,13 +59,14 @@ const Modal = ({
           </div>
 
           <button
-            className="bg-dark-cyan w-full lg:hidden text-white px-[30px] py-[15px] mt-4 rounded text-[18px] font-bold hover:bg-blue-700"
+            className="bg-dark-cyan hover:bg-[#66D2CF] w-full lg:hidden text-white px-[30px] py-[15px] mt-4 rounded text-[18px] font-bold"
             onClick={(e) => {
               e.stopPropagation();
-              handleModal();
+              validateCheckout();
+              handleCheckout();
             }}
           >
-            ${calculatePrice()}
+            Checkout - ${calculatePrice()?.toFixed(2)} / mo
           </button>
         </div>
       </div>

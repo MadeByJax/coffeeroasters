@@ -1,5 +1,5 @@
 import React from "react";
-import Circle from "/src/assets/home/desktop/circle.svg";
+import Circle from "/assets/home/desktop/circle.svg";
 import { Link } from "react-router-dom";
 
 const HowItWorks = ({ subscribePage }) => {

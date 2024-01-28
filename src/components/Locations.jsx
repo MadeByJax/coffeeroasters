@@ -1,7 +1,7 @@
 import React from "react";
-import UK from "/src/assets/about/desktop/illustration-uk.svg";
-import Canada from "/src/assets/about/desktop/illustration-canada.svg";
-import Australia from "/src/assets/about/desktop/illustration-australia.svg";
+import UK from "/assets/about/desktop/illustration-uk.svg";
+import Canada from "/assets/about/desktop/illustration-canada.svg";
+import Australia from "/assets/about/desktop/illustration-australia.svg";
 
 const Locations = () => {
   return (

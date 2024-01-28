@@ -1,5 +1,5 @@
 import { React, useState, useEffect, useRef } from "react";
-import Arrow from "/src/assets/plan/desktop/icon-arrow.svg";
+import Arrow from "/assets/plan/desktop/icon-arrow.svg";
 import "./Selection.css";
 import OrderSummary from "./OrderSummary";
 import Modal from "./Modal";

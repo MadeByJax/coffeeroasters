@@ -1,7 +1,7 @@
 import React from "react";
-import mobileImage from "/src/assets/about/mobile/image-commitment.jpg";
-import desktopImage from "/src/assets/about/desktop/image-commitment.jpg";
-import tabletImage from "/src/assets/about/tablet/image-commitment.jpg";
+import mobileImage from "/assets/about/mobile/image-commitment.jpg";
+import desktopImage from "/assets/about/desktop/image-commitment.jpg";
+import tabletImage from "/assets/about/tablet/image-commitment.jpg";
 
 const Commitment = () => {
   return (

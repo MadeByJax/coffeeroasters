@@ -13,7 +13,7 @@ const Collection = () => {
         <div className="flex flex-col md:flex-row lg:flex-col items-center justify-center">
           <img
             className="w-[200px] h-[150px] md:w-[255px] md:h-[193px]"
-            src="/src/assets/home/desktop/image-danche.png"
+            src="assets/home/desktop/image-danche.png"
             alt=""
           />
           <div className="text-center text-grey-blue">
@@ -27,7 +27,7 @@ const Collection = () => {
         <div className="flex flex-col md:flex-row lg:flex-col items-center justify-center">
           <img
             className="w-[200px] h-[150px]  md:w-[255px] md:h-[193px]"
-            src="/src/assets/home/desktop/image-gran-espresso.png"
+            src="assets/home/desktop/image-gran-espresso.png"
             alt=""
           />
           <div className="text-center text-grey-blue">
@@ -41,7 +41,7 @@ const Collection = () => {
         <div className="flex flex-col md:flex-row lg:flex-col items-center justify-center">
           <img
             className="w-[200px] h-[150px]  md:w-[255px] md:h-[193px]"
-            src="/src/assets/home/desktop/image-piccollo.png"
+            src="assets/home/desktop/image-piccollo.png"
             alt=""
           />
           <div className="text-center text-grey-blue">
@@ -55,7 +55,7 @@ const Collection = () => {
         <div className="flex flex-col md:flex-row lg:flex-col items-center justify-center">
           <img
             className="w-[200px] h-[150px]  md:w-[255px] md:h-[193px]"
-            src="/src/assets/home/desktop/image-planalto.png"
+            src="assets/home/desktop/image-planalto.png"
             alt=""
           />
           <div className="text-center text-grey-blue">

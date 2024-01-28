@@ -1,7 +1,7 @@
 import React from "react";
-import coffeebean from "/src/assets/home/desktop/icon-coffee-bean.svg";
-import gift from "/src/assets/home/desktop/icon-gift.svg";
-import truck from "/src/assets/home/desktop/icon-truck.svg";
+import coffeebean from "/assets/home/desktop/icon-coffee-bean.svg";
+import gift from "/assets/home/desktop/icon-gift.svg";
+import truck from "/assets/home/desktop/icon-truck.svg";
 
 const WhyChooseUs = () => {
   const reasonsToChooseUs = [

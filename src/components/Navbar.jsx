@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom"; // Corrected import
-import Logo from "/src/assets/shared/desktop/logo.svg";
-import Hamburger from "/src/assets/shared/mobile/icon-hamburger.svg";
-import Hamburgerclose from "/src/assets/shared/mobile/icon-close.svg";
+import Logo from "/assets/shared/desktop/logo.svg";
+import Hamburger from "/assets/shared/mobile/icon-hamburger.svg";
+import Hamburgerclose from "/assets/shared/mobile/icon-close.svg";
 import { Outlet, Link } from "react-router-dom";
 import "./Navbar.css";
 

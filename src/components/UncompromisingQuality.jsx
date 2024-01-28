@@ -1,7 +1,7 @@
 import React from "react";
-import mobileQuality from "/src/assets/about/mobile/image-quality.jpg";
-import tabletQuality from "/src/assets/about/tablet/image-quality.jpg";
-import desktopQuality from "/src/assets/about/desktop/image-quality.jpg";
+import mobileQuality from "/assets/about/mobile/image-quality.jpg";
+import tabletQuality from "/assets/about/tablet/image-quality.jpg";
+import desktopQuality from "/assets/about/desktop/image-quality.jpg";
 
 const UncompromisingQuality = () => {
   return (

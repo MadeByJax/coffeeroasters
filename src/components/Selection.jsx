@@ -19,7 +19,6 @@ const Selection = () => {
   const handleCheckout = () => {
     if (calculatePrice() !== null) {
       toast.success("Checkout successful!");
-      // Add any other logic for the checkout process here
     }
     if (calculatePrice() === null) {
       toast.error("Please select all options before checkout");
@@ -213,6 +212,7 @@ const Selection = () => {
       const newSelectedOptions = [...prevSelectedOptions];
       newSelectedOptions[categoryIndex] = option;
       setSelectedCategory(QuestionCategories[categoryIndex]);
+      console.log(selectedOptions);
 
       if (categoryIndex === 0 && option.title === "Capsule") {
         setIsCapsuleSelected(true);
@@ -232,10 +232,6 @@ const Selection = () => {
 
       if (categoryIndex !== 0) {
         console.log(selectedCategory);
-      }
-
-      if (categoryIndex === 2 && option.price) {
-        newSelectedOptions[4] = option.price;
       }
 
       return newSelectedOptions; // Moved to the end
@@ -269,7 +265,7 @@ const Selection = () => {
             </a>
           ))}
         </ul>
-        <div className="flex flex-col gap-[96px] max-w-[600px]">
+        <div className="flex flex-col gap-[96px] xl:max-w-[600px]">
           {CoffeeOptions.map((questionObj, categoryIndex) => (
             <div
               id={QuestionCategories[categoryIndex]}
@@ -312,11 +308,11 @@ const Selection = () => {
                 )}
               </div>
               {visibleOptions[categoryIndex] && (
-                <div className="mt-[32px] flex flex-col md:flex-row gap-[16px]">
+                <div className="mt-[32px] flex flex-col  md:flex-row gap-[16px]">
                   {questionObj.options.map((option) => (
                     <div
                       key={option.id}
-                      className={` cursor-pointer p-[24px] md:w-[228px] md:h-[250px] text-grey-blue ${
+                      className={` cursor-pointer p-[24px] xl:w-[228px] md:h-[250px] text-grey-blue ${
                         selectedOptions[categoryIndex].id === option.id
                           ? "bg-dark-cyan text-white"
                           : "bg-app-off-white"

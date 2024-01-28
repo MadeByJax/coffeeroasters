@@ -1,0 +1,7 @@
+.bg-gradient-custom {
+  background: linear-gradient(
+    180deg,
+    #fefcf7 50%,
+    /* light-cream */ rgba(254, 252, 247, 0) 100% /* transparent light-cream */
+  );
+}

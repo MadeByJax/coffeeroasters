@@ -2,14 +2,14 @@ import React from "react";
 
 const Collection = () => {
   return (
-    <div className="relative mt-[120px] px-6 container mx-auto">
+    <div className="relative ">
       <div className="relative  opacity-60">
         <div className="absolute h-[120px] inset-0 top-[-20px] bg-gradient-to-b from-transparent to-light-cream"></div>
         <h1 className="text-grey text-center  text-[40px] font-bold leading-[72px] md:text-[96px] lg:text-[150px]">
           our collection
         </h1>
       </div>
-      <div className="mt-8 md:-mt-2 flex md:px-20 lg:px-0 relative flex-col lg:flex-row justify-center z-50 items-center gap-12">
+      <div className="mt-8 md:-mt-2 flex md:px-20 lg:px-0 relative flex-col lg:flex-row justify-center  items-center gap-12">
         <div className="flex flex-col md:flex-row lg:flex-col items-center justify-center">
           <img
             className="w-[200px] h-[150px] md:w-[255px] md:h-[193px]"

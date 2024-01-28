@@ -1,5 +1,6 @@
 import React from "react";
 import Circle from "/src/assets/home/desktop/circle.svg";
+import { Link } from "react-router-dom";
 
 const HowItWorks = ({ subscribePage }) => {
   const steps = [
@@ -31,7 +32,7 @@ const HowItWorks = ({ subscribePage }) => {
       }`}
     >
       {!subscribePage && (
-        <h1 className="text-grey text-center text-2xl font-bold leading-8 md:text-left">
+        <h1 className="text-grey text-center text-2xl font-bold leading-8 md:text-left md:mb-[80px]">
           How it works
         </h1>
       )}
@@ -71,9 +72,11 @@ const HowItWorks = ({ subscribePage }) => {
         ))}
       </div>
       {!subscribePage && (
-        <button className="bg-dark-cyan w-[217px]  text-light-cream font-bold px-6 py-3 rounded-md mt-11">
-          Create your plan
-        </button>
+        <Link to="/subscribe">
+          <button className="bg-dark-cyan w-[217px]  text-light-cream font-bold px-6 py-3 rounded-md mt-11">
+            Create your plan
+          </button>
+        </Link>
       )}
     </div>
   );

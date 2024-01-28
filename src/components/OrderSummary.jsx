@@ -19,7 +19,6 @@ const OrderSummary = ({
           <span className="text-dark-cyan">{selectedOptions[1]?.title} </span>{" "}
           type of bean.{" "}
           <span className="text-dark-cyan">{selectedOptions[2]?.title}</span>,{" "}
-          {console.log(isCapsuleSelected) /* Add this line to log the value */}
           {!isCapsuleSelected && (
             <span className="text-dark-cyan">{selectedOptions[3]?.title}</span>
           )}{" "}

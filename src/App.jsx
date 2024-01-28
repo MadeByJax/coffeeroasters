@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Subscribe from "./pages/Subscribe";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function App() {
   return (

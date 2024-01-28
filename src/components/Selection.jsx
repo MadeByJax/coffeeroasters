@@ -181,7 +181,6 @@ const Selection = () => {
     const deliveryOption = selectedOptions[4];
     const weight = weightOption ? weightOption.title : null;
     const frequency = deliveryOption ? deliveryOption.title : null;
-    console.log(weight, frequency);
 
     // Check if weight and frequency are selected
     if (weight && frequency) {
@@ -204,7 +203,6 @@ const Selection = () => {
     const newVisibleOptions = [...visibleOptions];
     newVisibleOptions[index] = !newVisibleOptions[index];
     setVisibleOptions(newVisibleOptions);
-    console.log(visibleOptions);
   };
 
   const handleOptionSelect = (categoryIndex, option) => {
@@ -212,37 +210,20 @@ const Selection = () => {
       const newSelectedOptions = [...prevSelectedOptions];
       newSelectedOptions[categoryIndex] = option;
       setSelectedCategory(QuestionCategories[categoryIndex]);
-      console.log(selectedOptions);
 
-      if (categoryIndex === 0 && option.title === "Capsule") {
-        setIsCapsuleSelected(true);
-        const newVisibleOptions = [...visibleOptions];
-        newVisibleOptions[3] = false; // Directly set the value
-        setVisibleOptions(newVisibleOptions);
-
-        console.log(selectedCategory);
+      if (categoryIndex === 0) {
+        const isCapsule = option.title === "Capsule";
+        setIsCapsuleSelected(isCapsule);
+        setVisibleOptions((prevVisibleOptions) => {
+          const newVisibleOptions = [...prevVisibleOptions];
+          newVisibleOptions[3] = !isCapsule;
+          return newVisibleOptions;
+        });
       }
 
-      if (categoryIndex === 0 && option.title !== "Capsule") {
-        setIsCapsuleSelected(false);
-        const newVisibleOptions = [...visibleOptions];
-        newVisibleOptions[3] = true; // Directly set the value
-        setVisibleOptions(newVisibleOptions);
-      }
-
-      if (categoryIndex !== 0) {
-        console.log(selectedCategory);
-      }
-
-      return newSelectedOptions; // Moved to the end
+      return newSelectedOptions;
     });
   };
-
-  console.log(isCapsuleSelected);
-
-  useEffect(() => {
-    handleOptionSelect(); // Call the function when the component mounts
-  }, []);
 
   return (
     <>

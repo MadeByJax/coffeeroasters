@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Subscribe from "./pages/Subscribe";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/subscribe" element={<Subscribe />} />
       </Routes>
       <SpeedInsights />
+      <Analytics />
     </BrowserRouter>
   );
 }
